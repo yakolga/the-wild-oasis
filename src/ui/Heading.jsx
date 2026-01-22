@@ -18,7 +18,6 @@ const Heading = styled.h1`
 
     line-height: 1.4;
     font-weight: 600;
-    background-color: yellow;
 `
 
 export default Heading;
