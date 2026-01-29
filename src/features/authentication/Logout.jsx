@@ -12,7 +12,7 @@ function Logout() {
     }
 
     return (
-        <ButtonIcon disabled={isLoading} onClick={handleLogout}>
+        <ButtonIcon disabled={isLoading} onClick={handleLogout} variation="secondary">
             {!isLoading ? <HiArrowRightOnRectangle/> : <SpinnerMini/>}
         </ButtonIcon>
     )

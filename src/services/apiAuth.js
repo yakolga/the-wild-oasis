@@ -53,3 +53,24 @@ export async function logout() {
         throw new Error(error.message);
     }
 }
+
+export async function updateCurrentUser({password, fullName, avatar}) {
+    let updateData;
+    if (password) {
+        updateData = {password};
+    }
+
+    if (fullName) {
+        updateData = {data: {fullName}};
+    }
+    const {data, error} = supabase.auth.updateUser();
+    updateUser(updateData);
+
+    if (error) {
+        throw new Error(error.message);
+    }
+
+    if (!avatar) return data;
+
+    const fileName = `${data.user.id}-avatar.png`;
+}
